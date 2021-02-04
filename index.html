@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <!-- <script src="index.js"></script> -->
+</head>
+
+<body>
+    <div class="marksheet">
+        <h1 style="text-align: center;">MARKSHEET</h1>
+        <form onsubmit=" return checkResult()">
+            <label>English</label>
+            <input type="text" id="englishNumber">
+            <input type="number" id="englishTotalNumber" value="100" /><br /><br />
+            <label>Urdu</label>
+            <input type="text" id="urduNumber">
+            <input type="number" id="urduTotalNumber" value="100" /><br /><br />
+            <label>Maths</label>
+            <input type="text" id="mathsNumber">
+            <input type="number" id="mathsTotalNumber" value="100" /><br /><br />
+            <label>Chemistry</label>
+            <input type="text" id="chemistryNumber">
+            <input type="number" id="chemistryTotalNumber" value="100" /><br /><br />
+            <label>Physics</label>
+            <input type="text" id="physicsNumber">
+            <input type="number" id="physicsTotalNumber" value="100" /><br /><br />
+            <button>Check Result</button>
+        </form>
+        <h4>Total Marks : <span class="totalMakrs"></span></h4>
+        <h4>Obtained Marks : <span class="obtMarks"></span></h4>
+        <h4>Percentage : <span class="percentage"></span></h4>
+        <h4>Grade : <span class="grade"></span></h4>
+    </div>
+</body>
+<script>
+    function checkResult() {
+        //Getting Total Marks
+        let englishTotalNumber = parseInt(document.getElementById("englishTotalNumber").value);
+        let urduTotalNumber = parseInt(document.getElementById("urduTotalNumber").value);
+        let mathsTotalNumber = parseInt(document.getElementById("mathsTotalNumber").value);
+        let chemistryTotalNumber = parseInt(document.getElementById("chemistryTotalNumber").value);
+        let physicsTotalNumber = parseInt(document.getElementById("physicsTotalNumber").value);
+
+        //Showing Total Marks
+        let totalMakrs = englishTotalNumber + urduTotalNumber + mathsTotalNumber + chemistryTotalNumber + physicsTotalNumber;
+        console.log(totalMakrs);
+        document.getElementById("totalMakrs").innerText = totalMakrs;
+
+        // //Getting Obtained Marks
+        // let englishNumber = parseInt(document.getElementById("englishNumber").value);
+        // let urduNumber = parseInt(document.getElementById("urduNumber").value);
+        // let mathsNumber = parseInt(document.getElementById("mathsNumber").value);
+        // let chemistryNumber = parseInt(document.getElementById("chemistryNumber").value);
+        // let physicsNumber = parseInt(document.getElementById("physicsNumber").value);
+
+        // //Showing Obtained Marks
+        // let obtMarks = englishNumber + urduNumber + mathsNumber + chemistryNumber + physicsNumber;
+        // let finalMarks = totalMakrs = obtMarks;
+        // document.getElementById("obtMarks").innerText = finalMarks;
+
+        // //Showing Percentage
+        // let percentage = (finalMarks * 100) / totalMakrs;
+        // document.getElementById("percentage").innerText = percentage;
+
+        // //Showing Grade
+        // if (percentage >= 80) {
+        //     document.getElementById("grade").innerText = "A+";
+        // }
+        // else if (percentage >= 70) {
+        //     document.getElementById("grade").innerText = "A";
+        // }
+        // else if (percentage >= 60) {
+        //     document.getElementById("grade").innerText = "B";
+        // }
+        // else if (percentage >= 50) {
+        //     document.getElementById("grade").innerText = "C";
+        // }
+        // else if (percentage >= 40) {
+        //     document.getElementById("grade").innerText = "D";
+        // }
+        // else {
+        //     document.getElementById("grade").innerText = "F";
+        // }
+
+        return false;
+    }
+</script>
+
+</html>
